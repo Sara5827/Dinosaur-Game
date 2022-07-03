@@ -1,0 +1,161 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.game {
+    width: 600px;
+    height: 200px;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+#dino {
+    width: 50px;
+    height: 50px;
+    background-image: url(img/trex.png);
+    background-size: 50px 50px;
+    position: relative;
+    top: 150px;
+}
+
+.jump {
+    animation: jump 0.3s linear;
+}
+
+@keyframes jump {
+    0% {
+        top: 150px;
+    }
+    30% {
+        top: 130px;
+    }
+    50% {
+        top: 80px;
+    }
+    80% {
+        top: 130px;
+    }
+    100% {
+        top: 150px;
+    }
+}
+
+#cactus {
+    width: 20px;
+    height: 40px;
+    position: relative;
+    top: 110px;
+    left: 580px;
+    background-image: url("img/cactus.png");
+    background-size: 20px 40px;
+}
+
+#hidden {
+    display: block;
+    visibility: hidden;
+}
+
+.over {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    font-family: fantasy;
+    font-size: large;
+    visibility: inherit !important;
+}
+
+.start {
+    animation: block 1s infinite linear;
+}
+
+@keyframes block {
+    0% {
+        left: 580px;
+    }
+    100% {
+        left: -20px;
+    }
+}
+
+.blockActive {
+    animation: blockAnimate 1s linear infinite;
+}
+
+@keyframes blockAnimate {
+    0% {
+        right: -125px;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+#road {
+    height: 30px;
+    width: 600px;
+    position: absolute;
+    bottom: 0;
+}
+
+#road img {
+    height: 10px;
+    width: 600px;
+    position: absolute;
+    left: 0;
+    animation: none;
+    top: -170px;
+}
+
+.road {
+    animation: roadAnimate 1s infinite linear;
+    -webkit-animation: roadAnimate 1s infinite linear;
+}
+
+@keyframes roadAnimate {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 800px;
+    }
+}
+
+#cloud {
+    height: 40px;
+    width: 600px;
+    border-radius: 40px;
+    position: absolute;
+    /* top: 500px; */
+}
+
+#cloud img {
+    height: 40px;
+    width: 1000px;
+    position: absolute;
+    top: -150px;
+    animation: none;
+}
+
+.cloud {
+    animation: cloudAnimate 50s infinite linear;
+    -webkit-animation: cloudAnimate 50s infinite linear;
+}
+
+@keyframes cloudAnimate {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: 100%;
+    }
+}
